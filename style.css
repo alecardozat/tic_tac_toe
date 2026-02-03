@@ -16,6 +16,8 @@ main {
     gap: 2rem;
     padding-top: 2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #ddd;
+    height: 100vh;
 }
 
 section {
@@ -26,7 +28,7 @@ section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 4px;
-    min-width: 35%;
+    min-width: 50vh;
     max-width: 500px;
 }
 
@@ -41,15 +43,15 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.square:after {
+.square::after {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--color);
+    transition: opacity 0.2s ease-in-out;
 }
 
 .cross::after {
@@ -78,6 +80,10 @@ section {
 :root[style*="--curr-value: circle"] .square:hover:not(.selected)::after {
     content: '\25EF';
     font-size: 3rem;
+}
+
+.winner{
+    background-color: brown;
 }
 
 button {
